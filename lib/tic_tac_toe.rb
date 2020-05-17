@@ -110,7 +110,11 @@ def draw?
 end
 
 def over? 
+<<<<<<< HEAD
   if( won?() != false || draw?() == true )
+=======
+  if( won?() != false || full?() == true )
+>>>>>>> 67e7ff99fefee8029056e91f0c8763a5607dcdd6
     return true 
   else 
     return false
@@ -119,6 +123,7 @@ end
 
 def winner()
   board_won_on=won?()
+<<<<<<< HEAD
   
   if (board_won_on == false)
     return nil
@@ -126,13 +131,28 @@ def winner()
   else 
     winner_is_you=board_won_on[1]
     winner_name = @board[winner_is_you]
+=======
+  winner_is_you=board_won_on[1]
+  winner_name = @board[winner_is_you]
+  if (winner_name == " ")
+    return nil
+  else 
+>>>>>>> 67e7ff99fefee8029056e91f0c8763a5607dcdd6
     return winner_name
   end
 end 
   def play 
+<<<<<<< HEAD
     while(over? == false)
       turn()
       
+=======
+    while(true)
+      turn()
+      if(over? == true)
+        break
+      end
+>>>>>>> 67e7ff99fefee8029056e91f0c8763a5607dcdd6
     end
     if (won?)
        person = winner()
